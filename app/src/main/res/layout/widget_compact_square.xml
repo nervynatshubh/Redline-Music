@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Apple Music style small widget (2x2): artwork, red badge, play button, title and artist. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_apple_bg"
+    android:clipToOutline="true"
+    android:theme="@style/Theme.Widget.Metrolist">
+
+    <ImageView
+        android:id="@+id/widget_bg_art"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/widget_compact_album_art"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/album_art" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="top|end"
+                    android:src="@drawable/widget_apple_note"
+                    android:importantForAccessibility="no" />
+
+                <FrameLayout
+                    android:id="@+id/widget_compact_play_container"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/widget_apple_button_bg">
+
+                    <ImageView
+                        android:id="@+id/widget_compact_play_pause"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/np_play"
+                        android:contentDescription="@string/play_pause" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/widget_compact_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/not_playing"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#FFFFFFFF"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/widget_compact_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_to_play"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif"
+            android:textColor="#B3FFFFFF"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </LinearLayout>
+</FrameLayout>

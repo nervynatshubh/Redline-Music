@@ -1,0 +1,6 @@
+# Precompile the app's own UI code (screens, lists, player) ahead of time so scrolling
+# runs at full frame rate from the first launch instead of warming up in the JIT.
+HSPLcom/metrolist/music/**->**(**)**
+Lcom/metrolist/music/**;
+HSPLcom/metrolist/innertube/**->**(**)**
+Lcom/metrolist/innertube/**;

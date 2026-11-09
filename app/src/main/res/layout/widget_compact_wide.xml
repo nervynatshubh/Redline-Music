@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Apple Music style slim widget (4x1): artwork, title, artist, play/pause and next. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_apple_bg"
+    android:clipToOutline="true"
+    android:theme="@style/Theme.Widget.Metrolist">
+
+    <ImageView
+        android:id="@+id/widget_bg_art"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="6dp">
+
+        <ImageView
+            android:id="@+id/widget_wide_album_art"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/album_art" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_wide_song_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/not_playing"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#FFFFFFFF"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/widget_wide_artist_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tap_to_play"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif"
+                android:textColor="#B3FFFFFF"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/widget_wide_like_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/favorite_border"
+            android:contentDescription="@string/like" />
+
+        <FrameLayout
+            android:id="@+id/widget_wide_play_container"
+            android:layout_width="44dp"
+            android:layout_height="44dp">
+
+            <ImageView
+                android:id="@+id/widget_wide_play_pause"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/np_play"
+                android:contentDescription="@string/play_pause" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/widget_wide_next_button"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/np_forward"
+            android:contentDescription="@string/next" />
+    </LinearLayout>
+</FrameLayout>
